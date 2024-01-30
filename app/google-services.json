@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "346223289991",
+    "firebase_url": "https://blogger-apis-1647388634608-default-rtdb.firebaseio.com",
+    "project_id": "blogger-apis-1647388634608",
+    "storage_bucket": "blogger-apis-1647388634608.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:346223289991:android:a6dd5cfa464ae850b97a22",
+        "android_client_info": {
+          "package_name": "com.example.formationmobilegroupe5dec"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAjcgfQZMyxn1DDlb_BS6oQikuLlA5vOls"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
