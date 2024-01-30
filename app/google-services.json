@@ -1,14 +1,13 @@
 {
   "project_info": {
-    "project_number": "346223289991",
-    "firebase_url": "https://blogger-apis-1647388634608-default-rtdb.firebaseio.com",
-    "project_id": "blogger-apis-1647388634608",
-    "storage_bucket": "blogger-apis-1647388634608.appspot.com"
+    "project_number": "663858953097",
+    "project_id": "groupe5dec",
+    "storage_bucket": "groupe5dec.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:346223289991:android:a6dd5cfa464ae850b97a22",
+        "mobilesdk_app_id": "1:663858953097:android:b5d6760553b4a2f84a7f58",
         "android_client_info": {
           "package_name": "com.example.formationmobilegroupe5dec"
         }
@@ -16,7 +15,7 @@
       "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyAjcgfQZMyxn1DDlb_BS6oQikuLlA5vOls"
+          "current_key": "AIzaSyA7wSFBg4__Vof2h5W9AW0qpMSklSkFD0I"
         }
       ],
       "services": {
