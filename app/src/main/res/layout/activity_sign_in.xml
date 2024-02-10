@@ -58,6 +58,7 @@
                 android:layout_margin="15sp" />
 
             <EditText
+                android:id="@+id/emailSignIn"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="25sp"
@@ -79,6 +80,7 @@
                 android:layout_margin="15sp" />
 
             <EditText
+                android:id="@+id/passwordSignIn"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="25sp"

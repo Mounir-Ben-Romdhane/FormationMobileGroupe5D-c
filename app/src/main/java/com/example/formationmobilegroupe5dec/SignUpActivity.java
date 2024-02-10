@@ -11,11 +11,14 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.formationmobilegroupe5dec.Models.User;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -60,6 +63,8 @@ public class SignUpActivity extends AppCompatActivity {
         btnSignUp.setOnClickListener(v -> {
 
             if (validate()) {
+                progressDialog.setMessage("Please wait...!!");
+                progressDialog.show();
                 firebaseAuth.createUserWithEmailAndPassword(emailS.trim(), passwordS.trim()).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
@@ -83,8 +88,10 @@ public class SignUpActivity extends AppCompatActivity {
                 @Override
                 public void onComplete(@NonNull Task<Void> task) {
                     if (task.isSuccessful()){
+                        sendUserDate();
                         Toast.makeText(SignUpActivity.this, "Registration done ! Please verifie you email account !", Toast.LENGTH_LONG).show();
                         progressDialog.dismiss();
+                        startActivity(new Intent(SignUpActivity.this, SignInActivity.class));
                     }else {
                         Toast.makeText(SignUpActivity.this, "Failed !", Toast.LENGTH_SHORT).show();
                         progressDialog.dismiss();
@@ -94,9 +101,15 @@ public class SignUpActivity extends AppCompatActivity {
         }
     }
 
+    private void sendUserDate() {
+        FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
+        DatabaseReference myReference = firebaseDatabase.getReference("Users");
+        User newUser = new User(fullNameS, emailS, phoneS, cinS);
+        myReference.child(""+firebaseAuth.getUid()).setValue(newUser);
+    }
+
     private boolean validate() {
-        progressDialog.setMessage("Please wait...!!");
-        progressDialog.show();
+
         boolean res = false;
         fullNameS = fullName.getText().toString();
         emailS = email.getText().toString();
