@@ -6,7 +6,6 @@ import android.app.ProgressDialog;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
@@ -69,7 +68,7 @@ public class SignInActivity extends AppCompatActivity {
         boolean checkBox = preferences.getBoolean("remember", false);
 
         if (checkBox) {
-            startActivity(new Intent(SignInActivity.this, ProfilActivity.class));
+            startActivity(new Intent(SignInActivity.this, DevicesActivity.class));
         }
 
 
@@ -114,7 +113,7 @@ public class SignInActivity extends AppCompatActivity {
     private void checkEmailVerification() {
         FirebaseUser loggedUser = firebaseAuth.getCurrentUser();
         if (loggedUser.isEmailVerified()){
-            startActivity(new Intent(SignInActivity.this, ProfilActivity.class));
+            startActivity(new Intent(SignInActivity.this, DevicesActivity.class));
             progressDialog.dismiss();
         }else {
             Toast.makeText(this, "Please verify your account !", Toast.LENGTH_SHORT).show();
